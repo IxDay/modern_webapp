@@ -13,7 +13,10 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ABF5BD827BD9BF62
 #install packages
 aptitude update
 locale-gen fr_FR.UTF-8
-aptitude install -y nginx python-pip screen git
+aptitude install -y nginx python-pip screen git apt-get ssl-cert
+
+#generate certificate
+make-ssl-cert generate-default-snakeoil --force-overwrite
 
 # flask installation
 pip install flask
