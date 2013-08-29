@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Hello World</title>
+    </head>
+    <body>
+        <h1>Hello World</h1>
+        <script src="http://192.168.50.2/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect('http://192.168.50.2');
+            socket.on('news', function (data) {
+                console.log(data);
+                socket.emit('my other event', { my: 'data' });
+            });
+        </script>
+    </body>
+</html>
